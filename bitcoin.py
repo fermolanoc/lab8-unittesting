@@ -14,7 +14,7 @@ def main():
         bitcoin_amount = get_amount()
         user_bitcoin = get_input_value(bitcoin_amount)
         total_bitcoin_in_usd = user_bitcoin * current_bitcoin_value_in_usd
-        print(f'Your {bitcoin_amount} bitcoins are equal to ${total_bitcoin_in_usd} dollars')
+        show_results(bitcoin_amount, total_bitcoin_in_usd)
     except Exception as e:
         print(e)
         print('There was an error trying to access the url')
@@ -29,6 +29,9 @@ def get_input_value(amount):
        return float(amount)
     except ValueError as err:
         print('Wrong data type')
+
+def show_results(bitcoins, total_in_usd):
+    print(f'Your {bitcoins} bitcoins are equal to ${total_in_usd} dollars')
 
 if __name__ == "__main__":
     main();
