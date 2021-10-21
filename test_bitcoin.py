@@ -16,6 +16,10 @@ class TestBitcoin(TestCase):
         amount = bitcoin.get_input_value('10')
         self.assertEqual(10, amount)
 
+    # @patch('builtins.print')
+    # def test_show_results(self, mock_print):
+    #     bitcoin.show_results(25)
+    #     mock_print.assert_called_once_with('Your 25 bitcoins are equal to XXX.XXXXX dollars')
 
 if __name__== "__main__":
     bitcoin.main()
